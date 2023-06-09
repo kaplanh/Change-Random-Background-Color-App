@@ -1,6 +1,7 @@
 const clickBtn = document.querySelector(".btn-primary");
 const mouseOverBtn = document.querySelector(".btn-warning");
 const body = document.getElementById("body");
+const span = document.getElementById("span");
 
 const bgImageColors = [
   "linear-gradient(to top, red,orange,yellow,green,blue,indigo,violet)",
@@ -18,7 +19,6 @@ const bgImageColors = [
 ];
 
 const btnColors = ["yellow", "blue", "green", "red", "pink", "purple"];
-
 // *load islemi gerceklestiginde
 window.addEventListener("load", () => {
   body.style.backgroundImage =
@@ -28,16 +28,20 @@ window.addEventListener("load", () => {
 //* tiklandiginda
 
 clickBtn.addEventListener("click", () => {
+  let randomNumber = Math.floor(Math.random() * btnColors.length);
   body.style.backgroundImage =
     bgImageColors[Math.floor(Math.random() * bgImageColors.length)];
-  clickBtn.style.backgroundColor =
-    btnColors[Math.floor(Math.random() * btnColors.length)];
+  clickBtn.style.backgroundColor = btnColors[randomNumber];
+  span.innerText = `click:${btnColors[randomNumber]}`;
+  span.style.color = ` ${btnColors[randomNumber]}`;
 });
 
 //* mouse üzerine geldiginde
 mouseOverBtn.addEventListener("mouseover", () => {
+  let randomNumber = Math.floor(Math.random() * btnColors.length);
   body.style.backgroundImage =
     bgImageColors[Math.floor(Math.random() * bgImageColors.length)];
-  mouseOverBtn.style.backgroundColor =
-    btnColors[Math.floor(Math.random() * btnColors.length)];
+  mouseOverBtn.style.backgroundColor = btnColors[randomNumber];
+  span.innerText = `mouseover ${btnColors[randomNumber]}`;
+  span.style.color = ` ${btnColors[randomNumber]}`;
 });
