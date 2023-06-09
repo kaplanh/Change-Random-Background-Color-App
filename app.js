@@ -32,7 +32,7 @@ clickBtn.addEventListener("click", () => {
   body.style.backgroundImage =
     bgImageColors[Math.floor(Math.random() * bgImageColors.length)];
   clickBtn.style.backgroundColor = btnColors[randomNumber];
-  span.innerText = `click:${btnColors[randomNumber]}`;
+  span.innerText = `click ${btnColors[randomNumber]}`;
   span.style.color = ` ${btnColors[randomNumber]}`;
 });
 
